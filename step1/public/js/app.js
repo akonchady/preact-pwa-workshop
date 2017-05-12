@@ -752,94 +752,90 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 var MaterialComponent = function (_Component) {
-	_inherits(MaterialComponent, _Component);
+  _inherits(MaterialComponent, _Component);
 
-	function MaterialComponent() {
-		_classCallCheck(this, MaterialComponent);
+  function MaterialComponent() {
+    _classCallCheck(this, MaterialComponent);
 
-		// Attributes inside this array will be check for boolean value true
-		// and will be converted to mdc classes
-		var _this = _possibleConstructorReturn(this, (MaterialComponent.__proto__ || Object.getPrototypeOf(MaterialComponent)).call(this));
+    // Attributes inside this array will be check for boolean value true
+    // and will be converted to mdc classes
+    var _this = _possibleConstructorReturn(this, (MaterialComponent.__proto__ || Object.getPrototypeOf(MaterialComponent)).call(this));
 
-		_this._mdcProps = [];
-		// This will again be used to add apt classname to the component
-		_this.componentName = "";
-		// The final class name given to the dom
-		_this.classText = "";
-		return _this;
-	}
+    _this._mdcProps = [];
+    // This will again be used to add apt classname to the component
+    _this.componentName = "";
+    // The final class name given to the dom
+    _this.classText = "";
+    return _this;
+  }
 
-	_createClass(MaterialComponent, [{
-		key: "attachRipple",
-		value: function attachRipple() {
-			if (this.props.ripple && this.control) {
-				__WEBPACK_IMPORTED_MODULE_1__material_ripple__["a" /* MDCRipple */].attachTo(this.control);
-			}
-		}
-		// Build the className
+  _createClass(MaterialComponent, [{
+    key: "attachRipple",
+    value: function attachRipple() {
+      if (this.props.ripple && this.control) {
+        __WEBPACK_IMPORTED_MODULE_1__material_ripple__["a" /* MDCRipple */].attachTo(this.control);
+      }
+    }
+    // Build the className
 
-	}, {
-		key: "buildClassName",
-		value: function buildClassName(props) {
-			this.classText = "mdc-" + this.componentName;
-			for (var propKey in this.props) {
-				if (this.props.hasOwnProperty(propKey)) {
-					var prop = this.props[propKey];
-					if (typeof prop === "boolean" && prop) {
-						if (this._mdcProps.indexOf(propKey) !== -1) {
-							this.classText += " mdc-" + this.componentName + "--" + propKey;
-						}
-					}
-				}
-			}
-		}
-	}, {
-		key: "getClassName",
-		value: function getClassName(element) {
-			if (!element) {
-				return '';
-			}
-			element.attributes = element.attributes || {};
-			if (element.attributes.className) {
-				return this.classText + " " + element.attributes.className;
-			}
-			return this.classText;
-		}
-	}, {
-		key: "getAutoInitNames",
-		value: function getAutoInitNames() {
-			return this.autoInitText;
-		}
-		// Components must implement this method for their specific DOM structure
+  }, {
+    key: "buildClassName",
+    value: function buildClassName(props) {
+      this.classText = "mdc-" + this.componentName;
+      for (var propKey in this.props) {
+        if (this.props.hasOwnProperty(propKey)) {
+          var prop = this.props[propKey];
+          if (typeof prop === "boolean" && prop) {
+            if (this._mdcProps.indexOf(propKey) !== -1) {
+              this.classText += " mdc-" + this.componentName + "--" + propKey;
+            }
+          }
+        }
+      }
+    }
+  }, {
+    key: "getClassName",
+    value: function getClassName(element) {
+      if (!element) {
+        return "";
+      }
+      element.attributes = element.attributes || {};
+      if (element.attributes.className) {
+        return this.classText + " " + element.attributes.className;
+      }
+      return this.classText;
+    }
+  }, {
+    key: "getAutoInitNames",
+    value: function getAutoInitNames() {
+      return this.autoInitText;
+    }
+    // Components must implement this method for their specific DOM structure
 
-	}, {
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				"div",
-				props,
-				props.children
-			);
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			this.buildClassName();
-			// Fetch a VNode
-			var element = this.materialDom(this.props);
-			element.attributes = element.attributes || {};
-			var autoInits = this.getAutoInitNames();
-			// Fix for className
-			element.attributes.class = this.getClassName(element);
-			// Clean this shit of proxy attributes
-			this._mdcProps.forEach(function (prop) {
-				delete element.attributes[prop];
-			});
-			return element;
-		}
-	}]);
+  }, {
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", Object.assign({}, props), props.children);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      this.buildClassName();
+      // Fetch a VNode
+      var element = this.materialDom(this.props);
+      element.attributes = element.attributes || {};
+      var autoInits = this.getAutoInitNames();
+      // Fix for className
+      element.attributes.class = this.getClassName(element);
+      // Clean this shit of proxy attributes
+      this._mdcProps.forEach(function (prop) {
+        delete element.attributes[prop];
+      });
+      return element;
+    }
+  }]);
 
-	return MaterialComponent;
+  return MaterialComponent;
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (MaterialComponent);
@@ -1035,13 +1031,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _extends = Object.assign || function (target) {
-	for (var i = 1; i < arguments.length; i++) {
-		var source = arguments[i];for (var key in source) {
-			if (Object.prototype.hasOwnProperty.call(source, key)) {
-				target[key] = source[key];
-			}
-		}
-	}return target;
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
 };
 
 
@@ -1052,25 +1048,25 @@ var _extends = Object.assign || function (target) {
  */
 
 var Icon = function (_MaterialComponent) {
-	_inherits(Icon, _MaterialComponent);
+  _inherits(Icon, _MaterialComponent);
 
-	function Icon() {
-		_classCallCheck(this, Icon);
+  function Icon() {
+    _classCallCheck(this, Icon);
 
-		var _this = _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).call(this));
+    var _this = _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).call(this));
 
-		_this.componentName = "icon";
-		return _this;
-	}
+    _this.componentName = "icon";
+    return _this;
+  }
 
-	_createClass(Icon, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("i", _extends({}, props, { className: "material-icons" }), props.children);
-		}
-	}]);
+  _createClass(Icon, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("i", _extends({}, props, { className: "material-icons" }), props.children);
+    }
+  }]);
 
-	return Icon;
+  return Icon;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Icon);
@@ -1584,13 +1580,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _extends = Object.assign || function (target) {
-	for (var i = 1; i < arguments.length; i++) {
-		var source = arguments[i];for (var key in source) {
-			if (Object.prototype.hasOwnProperty.call(source, key)) {
-				target[key] = source[key];
-			}
-		}
-	}return target;
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
 };
 
 
@@ -1601,45 +1597,47 @@ var _extends = Object.assign || function (target) {
  */
 
 var Toolbar = function (_MaterialComponent) {
-	_inherits(Toolbar, _MaterialComponent);
+  _inherits(Toolbar, _MaterialComponent);
 
-	function Toolbar() {
-		_classCallCheck(this, Toolbar);
+  function Toolbar() {
+    _classCallCheck(this, Toolbar);
 
-		var _this = _possibleConstructorReturn(this, (Toolbar.__proto__ || Object.getPrototypeOf(Toolbar)).call(this));
+    var _this = _possibleConstructorReturn(this, (Toolbar.__proto__ || Object.getPrototypeOf(Toolbar)).call(this));
 
-		_this.componentName = "toolbar";
-		_this._mdcProps = ["fixed"];
-		return _this;
-	}
+    _this.componentName = "toolbar";
+    _this._mdcProps = ["fixed"];
+    return _this;
+  }
 
-	_createClass(Toolbar, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			var _this2 = this;
+  _createClass(Toolbar, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      var _this2 = this;
 
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("header", _extends({ ref: function ref(control) {
-					_this2.control = control;
-				} }, props), props.children);
-		}
-	}]);
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("header", _extends({
+        ref: function ref(control) {
+          _this2.control = control;
+        }
+      }, props), props.children);
+    }
+  }]);
 
-	return Toolbar;
+  return Toolbar;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 var ToolbarRow = function (_MaterialComponent2) {
-	_inherits(ToolbarRow, _MaterialComponent2);
+  _inherits(ToolbarRow, _MaterialComponent2);
 
-	function ToolbarRow() {
-		_classCallCheck(this, ToolbarRow);
+  function ToolbarRow() {
+    _classCallCheck(this, ToolbarRow);
 
-		var _this3 = _possibleConstructorReturn(this, (ToolbarRow.__proto__ || Object.getPrototypeOf(ToolbarRow)).call(this));
+    var _this3 = _possibleConstructorReturn(this, (ToolbarRow.__proto__ || Object.getPrototypeOf(ToolbarRow)).call(this));
 
-		_this3.componentName = "toolbar__row";
-		return _this3;
-	}
+    _this3.componentName = "toolbar__row";
+    return _this3;
+  }
 
-	return ToolbarRow;
+  return ToolbarRow;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /**
@@ -1649,48 +1647,48 @@ var ToolbarRow = function (_MaterialComponent2) {
 
 
 var ToolbarSection = function (_MaterialComponent3) {
-	_inherits(ToolbarSection, _MaterialComponent3);
+  _inherits(ToolbarSection, _MaterialComponent3);
 
-	function ToolbarSection() {
-		_classCallCheck(this, ToolbarSection);
+  function ToolbarSection() {
+    _classCallCheck(this, ToolbarSection);
 
-		var _this4 = _possibleConstructorReturn(this, (ToolbarSection.__proto__ || Object.getPrototypeOf(ToolbarSection)).call(this));
+    var _this4 = _possibleConstructorReturn(this, (ToolbarSection.__proto__ || Object.getPrototypeOf(ToolbarSection)).call(this));
 
-		_this4.componentName = "toolbar__section";
-		_this4._mdcProps = ["align-start", "align-end"];
-		return _this4;
-	}
+    _this4.componentName = "toolbar__section";
+    _this4._mdcProps = ["align-start", "align-end"];
+    return _this4;
+  }
 
-	_createClass(ToolbarSection, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("section", props, props.children);
-		}
-	}]);
+  _createClass(ToolbarSection, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("section", props, props.children);
+    }
+  }]);
 
-	return ToolbarSection;
+  return ToolbarSection;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 var ToolbarIcon = function (_MaterialComponent4) {
-	_inherits(ToolbarIcon, _MaterialComponent4);
+  _inherits(ToolbarIcon, _MaterialComponent4);
 
-	function ToolbarIcon() {
-		_classCallCheck(this, ToolbarIcon);
+  function ToolbarIcon() {
+    _classCallCheck(this, ToolbarIcon);
 
-		var _this5 = _possibleConstructorReturn(this, (ToolbarIcon.__proto__ || Object.getPrototypeOf(ToolbarIcon)).call(this));
+    var _this5 = _possibleConstructorReturn(this, (ToolbarIcon.__proto__ || Object.getPrototypeOf(ToolbarIcon)).call(this));
 
-		_this5.componentName = "toolbal__icon";
-		return _this5;
-	}
+    _this5.componentName = "toolbar__icon";
+    return _this5;
+  }
 
-	_createClass(ToolbarIcon, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("a", _extends({ className: "material-icons" }, props), props.children || 'menu');
-		}
-	}]);
+  _createClass(ToolbarIcon, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("a", _extends({ className: "material-icons" }, props), props.children || "menu");
+    }
+  }]);
 
-	return ToolbarIcon;
+  return ToolbarIcon;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /**
@@ -1699,25 +1697,25 @@ var ToolbarIcon = function (_MaterialComponent4) {
 
 
 var ToolbarTitle = function (_MaterialComponent5) {
-	_inherits(ToolbarTitle, _MaterialComponent5);
+  _inherits(ToolbarTitle, _MaterialComponent5);
 
-	function ToolbarTitle() {
-		_classCallCheck(this, ToolbarTitle);
+  function ToolbarTitle() {
+    _classCallCheck(this, ToolbarTitle);
 
-		var _this6 = _possibleConstructorReturn(this, (ToolbarTitle.__proto__ || Object.getPrototypeOf(ToolbarTitle)).call(this));
+    var _this6 = _possibleConstructorReturn(this, (ToolbarTitle.__proto__ || Object.getPrototypeOf(ToolbarTitle)).call(this));
 
-		_this6.componentName = "toolbar__title";
-		return _this6;
-	}
+    _this6.componentName = "toolbar__title";
+    return _this6;
+  }
 
-	_createClass(ToolbarTitle, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("span", props, props.children);
-		}
-	}]);
+  _createClass(ToolbarTitle, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("span", props, props.children);
+    }
+  }]);
 
-	return ToolbarTitle;
+  return ToolbarTitle;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 Toolbar.Section = ToolbarSection;
@@ -2456,8 +2454,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var MATCHES = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util__["a" /* getMatchesProperty */])(HTMLElement.prototype);
-
 
 
 var MDCRipple = function (_MDCComponent) {
@@ -2521,6 +2517,8 @@ var MDCRipple = function (_MDCComponent) {
   }, {
     key: 'createAdapter',
     value: function createAdapter(instance) {
+      var MATCHES = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util__["a" /* getMatchesProperty */])(HTMLElement.prototype);
+
       return {
         browserSupportsCssVars: function browserSupportsCssVars() {
           return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util__["b" /* supportsCssVariables */])(window);
@@ -2701,8 +2699,8 @@ function fromByteArray(uint8) {
 
 
 var base64 = __webpack_require__(15);
-var ieee754 = __webpack_require__(17);
-var isArray = __webpack_require__(18);
+var ieee754 = __webpack_require__(18);
+var isArray = __webpack_require__(17);
 
 exports.Buffer = Buffer;
 exports.SlowBuffer = SlowBuffer;
@@ -4433,6 +4431,16 @@ function isnan(val) {
 /* 17 */
 /***/ (function(module, exports) {
 
+var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m;
   var eLen = nBytes * 8 - mLen - 1;
@@ -4516,16 +4524,6 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
 
   buffer[offset + i - d] |= s * 128;
-};
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
 };
 
 /***/ }),
@@ -4682,79 +4680,108 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var App = function (_Component) {
-	_inherits(App, _Component);
+  _inherits(App, _Component);
 
-	function App() {
-		_classCallCheck(this, App);
+  function App() {
+    _classCallCheck(this, App);
 
-		return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	}
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
 
-	_createClass(App, [{
-		key: 'getProfileComponent',
-		value: function getProfileComponent() {}
-	}, {
-		key: 'getHome',
-		value: function getHome() {
-			return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 22)).then(function (module) {
-				return module.default;
-			});
-		}
-	}, {
-		key: 'getProfileComponent',
-		value: function getProfileComponent() {
-			return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 23)).then(function (module) {
-				return module.default;
-			});
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				'div',
-				null,
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */],
-					{ className: 'toolbar' },
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Row,
-						null,
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Section,
-							{ 'align-start': true },
-							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Icon,
-								null,
-								'menu'
-							),
-							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Title,
-								null,
-								'People around me'
-							)
-						),
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-							__WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Section,
-							{ 'align-end': true },
-							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Icon__["a" /* default */],
-								null,
-								'notifications'
-							)
-						)
-					)
-				),
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					__WEBPACK_IMPORTED_MODULE_1_preact_router__["a" /* Router */],
-					null,
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2_preact_async_route___default.a, { path: '/', component: this.getHome }),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2_preact_async_route___default.a, { path: '/profile/:userid', component: this.getProfileComponent })
-				)
-			);
-		}
-	}]);
+  _createClass(App, [{
+    key: 'getProfileComponent',
+    value: function getProfileComponent() {}
+  }, {
+    key: 'getHome',
+    value: function getHome() {
+      return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 22)).then(function (module) {
+        return module.default;
+      });
+    }
+  }, {
+    key: 'getProfileComponent',
+    value: function getProfileComponent() {
+      return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 23)).then(function (module) {
+        return module.default;
+      });
+    }
+  }, {
+    key: 'getNotifications',
+    value: function getNotifications() {
+      var messaging = firebase.messaging();
+      messaging.requestPermission().then(function (currentToken) {
+        console.log('Notification permission granted.');
+        messaging.getToken().then(function (currentToken) {
+          if (currentToken) {
+            console.log(currentToken);
+          } else {
+            // Show permission request.
+            console.log('No Instance ID token available. Request permission to generate one.');
+          }
+        }).catch(function (err) {
+          console.log('An error occurred while retrieving token. ', err);
+        });
+      }).catch(function (err) {
+        console.log('Unable to get permission to notify.', err);
+      });
 
-	return App;
+      //check for refresh
+      messaging.onTokenRefresh(function () {
+        messaging.getToken().then(function (refreshedToken) {
+          console.log('Token refreshed.', refreshedToken);
+        }).catch(function (err) {
+          console.log('Unable to retrieve refreshed token ', err);
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        null,
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */],
+          { className: 'toolbar' },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Row,
+            null,
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Section,
+              { 'align-start': true },
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Icon,
+                null,
+                'menu'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Title,
+                null,
+                'People around me'
+              )
+            ),
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              __WEBPACK_IMPORTED_MODULE_3_preact_material_components_Toolbar__["a" /* default */].Section,
+              { 'align-end': true },
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_4_preact_material_components_Icon__["a" /* default */],
+                { onClick: this.getNotifications.bind(this) },
+                'notifications'
+              )
+            )
+          )
+        ),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          __WEBPACK_IMPORTED_MODULE_1_preact_router__["a" /* Router */],
+          null,
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2_preact_async_route___default.a, { path: '/', component: this.getHome }),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2_preact_async_route___default.a, { path: '/profile/:userid', component: this.getProfileComponent })
+        )
+      );
+    }
+  }]);
+
+  return App;
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(App, null), document.querySelector('.app'));

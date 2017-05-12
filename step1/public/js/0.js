@@ -96,13 +96,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _extends = Object.assign || function (target) {
-	for (var i = 1; i < arguments.length; i++) {
-		var source = arguments[i];for (var key in source) {
-			if (Object.prototype.hasOwnProperty.call(source, key)) {
-				target[key] = source[key];
-			}
-		}
-	}return target;
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
 };
 
 
@@ -118,37 +118,37 @@ var _extends = Object.assign || function (target) {
  */
 
 var Button = function (_MaterialComponent) {
-	_inherits(Button, _MaterialComponent);
+  _inherits(Button, _MaterialComponent);
 
-	function Button() {
-		_classCallCheck(this, Button);
+  function Button() {
+    _classCallCheck(this, Button);
 
-		var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
+    var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
 
-		_this.componentName = "button";
-		_this._mdcProps = ["dense", "raised", "compact", "primary", "accent"];
-		return _this;
-	}
+    _this.componentName = "button";
+    _this._mdcProps = ["dense", "raised", "compact", "primary", "accent"];
+    return _this;
+  }
 
-	_createClass(Button, [{
-		key: "componentDidMount",
-		value: function componentDidMount() {
-			_get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), "attachRipple", this).call(this);
-		}
-	}, {
-		key: "materialDom",
-		value: function materialDom(props) {
-			var _this2 = this;
+  _createClass(Button, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      _get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), "attachRipple", this).call(this);
+    }
+  }, {
+    key: "materialDom",
+    value: function materialDom(props) {
+      var _this2 = this;
 
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("button", _extends({
-				ref: function ref(control) {
-					_this2.control = control;
-				}
-			}, props), this.props.children);
-		}
-	}]);
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("button", _extends({
+        ref: function ref(control) {
+          _this2.control = control;
+        }
+      }, props), this.props.children);
+    }
+  }]);
 
-	return Button;
+  return Button;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Button);
@@ -172,13 +172,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _extends = Object.assign || function (target) {
-	for (var i = 1; i < arguments.length; i++) {
-		var source = arguments[i];for (var key in source) {
-			if (Object.prototype.hasOwnProperty.call(source, key)) {
-				target[key] = source[key];
-			}
-		}
-	}return target;
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
 };
 
 
@@ -186,173 +186,177 @@ var _extends = Object.assign || function (target) {
 
 
 var Card = function (_MaterialComponent) {
-	_inherits(Card, _MaterialComponent);
+  _inherits(Card, _MaterialComponent);
 
-	function Card() {
-		_classCallCheck(this, Card);
+  function Card() {
+    _classCallCheck(this, Card);
 
-		var _this = _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).call(this));
+    var _this = _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).call(this));
 
-		_this.componentName = "card";
-		_this._mdcProps = ["theme-dark"];
-		return _this;
-	}
+    _this.componentName = "card";
+    _this._mdcProps = ["theme-dark"];
+    return _this;
+  }
 
-	return Card;
+  return Card;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 var CardSection = function (_MaterialComponent2) {
-	_inherits(CardSection, _MaterialComponent2);
+  _inherits(CardSection, _MaterialComponent2);
 
-	function CardSection() {
-		_classCallCheck(this, CardSection);
+  function CardSection() {
+    _classCallCheck(this, CardSection);
 
-		var _this2 = _possibleConstructorReturn(this, (CardSection.__proto__ || Object.getPrototypeOf(CardSection)).call(this));
+    var _this2 = _possibleConstructorReturn(this, (CardSection.__proto__ || Object.getPrototypeOf(CardSection)).call(this));
 
-		_this2.componentName = "";
-		return _this2;
-	}
+    _this2.componentName = "";
+    return _this2;
+  }
 
-	_createClass(CardSection, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("section", props, props.children);
-		}
-	}]);
+  _createClass(CardSection, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("section", props, props.children);
+    }
+  }]);
 
-	return CardSection;
+  return CardSection;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 var CardPrimary = function (_CardSection) {
-	_inherits(CardPrimary, _CardSection);
+  _inherits(CardPrimary, _CardSection);
 
-	function CardPrimary() {
-		_classCallCheck(this, CardPrimary);
+  function CardPrimary() {
+    _classCallCheck(this, CardPrimary);
 
-		var _this3 = _possibleConstructorReturn(this, (CardPrimary.__proto__ || Object.getPrototypeOf(CardPrimary)).call(this));
+    var _this3 = _possibleConstructorReturn(this, (CardPrimary.__proto__ || Object.getPrototypeOf(CardPrimary)).call(this));
 
-		_this3.componentName = "card__primary";
-		return _this3;
-	}
+    _this3.componentName = "card__primary";
+    return _this3;
+  }
 
-	return CardPrimary;
+  return CardPrimary;
 }(CardSection);
 
 var CardSupportingText = function (_CardSection2) {
-	_inherits(CardSupportingText, _CardSection2);
+  _inherits(CardSupportingText, _CardSection2);
 
-	function CardSupportingText() {
-		_classCallCheck(this, CardSupportingText);
+  function CardSupportingText() {
+    _classCallCheck(this, CardSupportingText);
 
-		var _this4 = _possibleConstructorReturn(this, (CardSupportingText.__proto__ || Object.getPrototypeOf(CardSupportingText)).call(this));
+    var _this4 = _possibleConstructorReturn(this, (CardSupportingText.__proto__ || Object.getPrototypeOf(CardSupportingText)).call(this));
 
-		_this4.componentName = "card__supporting-text";
-		return _this4;
-	}
+    _this4.componentName = "card__supporting-text";
+    return _this4;
+  }
 
-	return CardSupportingText;
+  return CardSupportingText;
 }(CardSection);
 
 var CardActions = function (_CardSection3) {
-	_inherits(CardActions, _CardSection3);
+  _inherits(CardActions, _CardSection3);
 
-	function CardActions() {
-		_classCallCheck(this, CardActions);
+  function CardActions() {
+    _classCallCheck(this, CardActions);
 
-		var _this5 = _possibleConstructorReturn(this, (CardActions.__proto__ || Object.getPrototypeOf(CardActions)).call(this));
+    var _this5 = _possibleConstructorReturn(this, (CardActions.__proto__ || Object.getPrototypeOf(CardActions)).call(this));
 
-		_this5.componentName = "card__actions";
-		_this5._mdcProps = ["vertical"];
-		return _this5;
-	}
+    _this5.componentName = "card__actions";
+    _this5._mdcProps = ["vertical"];
+    return _this5;
+  }
 
-	return CardActions;
+  return CardActions;
 }(CardSection);
 
 var CardMedia = function (_CardSection4) {
-	_inherits(CardMedia, _CardSection4);
+  _inherits(CardMedia, _CardSection4);
 
-	function CardMedia() {
-		_classCallCheck(this, CardMedia);
+  function CardMedia() {
+    _classCallCheck(this, CardMedia);
 
-		var _this6 = _possibleConstructorReturn(this, (CardMedia.__proto__ || Object.getPrototypeOf(CardMedia)).call(this));
+    var _this6 = _possibleConstructorReturn(this, (CardMedia.__proto__ || Object.getPrototypeOf(CardMedia)).call(this));
 
-		_this6.componentName = "card__media";
-		return _this6;
-	}
+    _this6.componentName = "card__media";
+    return _this6;
+  }
 
-	return CardMedia;
+  return CardMedia;
 }(CardSection);
 
 var CardAction = function (_Button) {
-	_inherits(CardAction, _Button);
+  _inherits(CardAction, _Button);
 
-	function CardAction() {
-		_classCallCheck(this, CardAction);
+  function CardAction() {
+    _classCallCheck(this, CardAction);
 
-		var _this7 = _possibleConstructorReturn(this, (CardAction.__proto__ || Object.getPrototypeOf(CardAction)).call(this));
+    var _this7 = _possibleConstructorReturn(this, (CardAction.__proto__ || Object.getPrototypeOf(CardAction)).call(this));
 
-		_this7.componentName = "card__action";
-		return _this7;
-	}
+    _this7.componentName = "card__action";
+    return _this7;
+  }
 
-	_createClass(CardAction, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			var _this8 = this;
+  _createClass(CardAction, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      var _this8 = this;
 
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("button", _extends({ className: "mdc-button mdc-button--compact" }, props, { ref: function ref(control) {
-					_this8.control = control;
-				} }), props.children);
-		}
-	}]);
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("button", _extends({
+        className: "mdc-button mdc-button--compact"
+      }, props, {
+        ref: function ref(control) {
+          _this8.control = control;
+        }
+      }), props.children);
+    }
+  }]);
 
-	return CardAction;
+  return CardAction;
 }(__WEBPACK_IMPORTED_MODULE_2__Button__["a" /* default */]);
 
 var CardTitle = function (_MaterialComponent3) {
-	_inherits(CardTitle, _MaterialComponent3);
+  _inherits(CardTitle, _MaterialComponent3);
 
-	function CardTitle() {
-		_classCallCheck(this, CardTitle);
+  function CardTitle() {
+    _classCallCheck(this, CardTitle);
 
-		var _this9 = _possibleConstructorReturn(this, (CardTitle.__proto__ || Object.getPrototypeOf(CardTitle)).call(this));
+    var _this9 = _possibleConstructorReturn(this, (CardTitle.__proto__ || Object.getPrototypeOf(CardTitle)).call(this));
 
-		_this9.componentName = "card__title";
-		_this9._mdcProps = ["large"];
-		return _this9;
-	}
+    _this9.componentName = "card__title";
+    _this9._mdcProps = ["large"];
+    return _this9;
+  }
 
-	_createClass(CardTitle, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("h1", props, props.children);
-		}
-	}]);
+  _createClass(CardTitle, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("h1", props, props.children);
+    }
+  }]);
 
-	return CardTitle;
+  return CardTitle;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 var CardSubtitle = function (_MaterialComponent4) {
-	_inherits(CardSubtitle, _MaterialComponent4);
+  _inherits(CardSubtitle, _MaterialComponent4);
 
-	function CardSubtitle() {
-		_classCallCheck(this, CardSubtitle);
+  function CardSubtitle() {
+    _classCallCheck(this, CardSubtitle);
 
-		var _this10 = _possibleConstructorReturn(this, (CardSubtitle.__proto__ || Object.getPrototypeOf(CardSubtitle)).call(this));
+    var _this10 = _possibleConstructorReturn(this, (CardSubtitle.__proto__ || Object.getPrototypeOf(CardSubtitle)).call(this));
 
-		_this10.componentName = "card__subtitle";
-		return _this10;
-	}
+    _this10.componentName = "card__subtitle";
+    return _this10;
+  }
 
-	_createClass(CardSubtitle, [{
-		key: "materialDom",
-		value: function materialDom(props) {
-			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("h2", props, props.children);
-		}
-	}]);
+  _createClass(CardSubtitle, [{
+    key: "materialDom",
+    value: function materialDom(props) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("h2", props, props.children);
+    }
+  }]);
 
-	return CardSubtitle;
+  return CardSubtitle;
 }(__WEBPACK_IMPORTED_MODULE_1__MaterialComponent__["a" /* default */]);
 
 Card.Primary = CardPrimary;

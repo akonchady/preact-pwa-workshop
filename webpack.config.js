@@ -6,10 +6,10 @@ const prod = process.argv.indexOf('-p') !== -1;
 const extractCSS = new ExtractTextPlugin('../css/[name].css');
 const config = {
   entry: {
-    app: './step6/app.js'
+    app: './step1/app.js'
   },
   output: {
-    path: __dirname + '/step6/public/js',
+    path: __dirname + '/step1/public/js',
     publicPath: '/public/js/',
     filename: '[name].js',
   },
